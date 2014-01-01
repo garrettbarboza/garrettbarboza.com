@@ -24,6 +24,7 @@
 
     <script type="text/javascript" src="g.js"></script>
     <script type="text/javascript">
+      /* Assume most bots don't execute javascript. */
       var blah = [37, 35, 48, 48, 39, 54, 54, 2, 37, 35, 48, 48, 39, 54, 54, 32, 35, 48, 32, 45, 56, 35, 108, 33, 45, 47];
       document.getElementById("blah").innerHTML = blah.map(function(x) { return String.fromCharCode(x ^ 0x42)}).join("");
       document.getElementById("blah").href = "mailto:" + document.getElementById("blah").innerHTML;
