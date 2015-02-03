@@ -13,9 +13,8 @@
     </style>
   </head>
   <body>
-    <p>Hi! I'm Garrett. I currently work at <a href="http://www.kapricasecurity.com/">Kaprica Security</a>, a company I helped found, as an engineer.</p>
+    <p>Hi! I'm Garrett.</p>
     <p>I can be reached via <i><a id="blah" href=""></a></i></p>
-    <p>Or at 409-GBA-RBOZ</p>
     <p>My GPG key ID is <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x321B1B1C">0x321B1B1C</a></p>
     <p>My public key is also <a href="pub.asc">here</a></p>
     <p>My résumé is available <a href="resume.pdf">here</a></p>
@@ -24,7 +23,6 @@
 
     <script type="text/javascript" src="g.js"></script>
     <script type="text/javascript">
-      /* Assume most bots don't execute javascript. */
       var blah = [37, 35, 48, 48, 39, 54, 54, 2, 37, 35, 48, 48, 39, 54, 54, 32, 35, 48, 32, 45, 56, 35, 108, 33, 45, 47];
       document.getElementById("blah").innerHTML = blah.map(function(x) { return String.fromCharCode(x ^ 0x42)}).join("");
       document.getElementById("blah").href = "mailto:" + document.getElementById("blah").innerHTML;
