@@ -29,5 +29,9 @@
     blinder = setInterval(f, random_element(intervals));
   }
 
-  setInterval(function() { set_random_interval(blind_user, intervals); }, 1000);
+  setInterval(
+    function me() {
+      set_random_interval(blind_user, intervals); return me;
+    }(),
+    1000);
 })();
