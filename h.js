@@ -1,4 +1,6 @@
 (function(){
+  var is_paused = false;
+
   var colors = [
     "#656555",
     "#2B2B2B",
@@ -50,7 +52,7 @@
   var blinder = null;
 
   function blind_user() {
-    document.body.style.backgroundColor = random_element(colors);
+    if (!is_paused) { document.body.style.backgroundColor = random_element(colors); }
   }
 
   function set_random_interval(f, intervals) {
@@ -58,9 +60,12 @@
     blinder = setInterval(f, random_element(intervals));
   }
 
-  setInterval(
-    function me() {
-      set_random_interval(blind_user, intervals); return me;
-    }(),
-    1000);
+  document.body.onkeyup = function(e) {
+    if(e.keyCode == 32) { is_paused = !is_paused; }
+  }
+
+  setInterval(function me() {
+    set_random_interval(blind_user, intervals);
+    return me;
+  }(), 1000);
 })();
